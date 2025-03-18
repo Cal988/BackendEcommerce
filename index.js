@@ -10,7 +10,7 @@ const app = express()
 
 
 app.use(cors({
-    origin: process.env.FRONTEND_URL,
+    origin: '*', 
     credentials : true
 }))
 // Set a larger limit for the request body
