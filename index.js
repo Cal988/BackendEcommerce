@@ -10,7 +10,7 @@ const app = express()
 
 
 app.use(cors({
-    origin: '*', 
+    origin: 'https://frontend-ecommerce-reino.vercel.app', 
     credentials : true
 }))
 // Set a larger limit for the request body
