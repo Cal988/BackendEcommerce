@@ -8,9 +8,9 @@ const bodyParser = require('body-parser');
 
 const app = express()
 
-//http://localhost:3000
+
 app.use(cors({
-    origin: 'https://frontend-ecommerce-reino.vercel.app/', 
+    origin: 'https://frontend-ecommerce-reino.vercel.app', 
     credentials : true
 }))
 // Set a larger limit for the request body
