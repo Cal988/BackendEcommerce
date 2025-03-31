@@ -32,7 +32,8 @@ async function userSignInController(req, res){
 
             const tokenOption = {
                 httpOnly : true,
-                secure : true
+                secure: process.env.NODE_ENV === 'production', // Solo habilitar en producción
+                sameSite: 'strict', // Asegura que las cookies no se envíen en solicitudes de terceros
             }
 
             res.cookie("token", token, tokenOption).status(200).json({
