@@ -10,7 +10,7 @@ const app = express()
 
 
 app.use(cors({
-    origin: ['https://www.elreinodios.com', 'https://elreinodios.com', 'https://frontend-ecommerce-reino.vercel.app'], 
+    origin: ['https://www.elreinodios.com', 'https://elreinodios.com', 'https://frontend-ecommerce-reino.vercel.app', 'http://localhost:3000'], 
     credentials : true
 }))
 // Set a larger limit for the request body
