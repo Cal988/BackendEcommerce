@@ -122,7 +122,7 @@ router.post("/category-product", getCategoryWiseProduct)
 router.post("/product-details", getProductDetails)
 router.get("/search", searchProduct)
 router.post("/filter-product",filterProductController)
-router.delete("/delete-product", deleteProductController);
+router.delete("/delete-product", authToken, deleteProductController);
 
 
 //user add to cart
