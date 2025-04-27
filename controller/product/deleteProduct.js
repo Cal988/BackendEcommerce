@@ -4,39 +4,28 @@ const License = require("../../models/licenseModel");
 
 async function deleteProductController(req, res) {
     try {
-        const sessionUserId = req.userId;
-
-        if (!uploadProductPermission(sessionUserId)) {
-            throw new Error("Permission denied");
-        }
-
+        // Elimina cualquier verificación de permisos o userId
         const { productId } = req.body;
 
         if (!productId) {
-            throw new Error("Product ID is required");
+            return res.status(400).json({ error: "Product ID is required" });
         }
 
+       
 
-        // Luego eliminamos el producto
-        const deletedProduct = await productModel.findByIdAndDelete(productId);
+        // Elimina el producto
+        const deletedProduct = await Product.findByIdAndDelete(productId);
 
         if (!deletedProduct) {
-            throw new Error("Product not found");
+            return res.status(404).json({ error: "Product not found" });
         }
 
         res.status(200).json({
-            message: "Product deleted successfully",
-            error: false,
             success: true,
-            data: deletedProduct
+            message: "Product deleted successfully",
         });
-
-    } catch (err) {
-        res.status(400).json({
-            message: err.message || err,
-            error: true,
-            success: false
-        });
+    } catch (error) {
+        res.status(500).json({ error: "Server error" });
     }
 }
 
