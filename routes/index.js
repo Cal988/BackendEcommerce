@@ -37,6 +37,7 @@ const { actualizarTarea } = require('../controller/user/actualizarTarea')
 const { createMantenimientoCorrectivo } = require('../controller/user/mantenimientoCorrectivo')
 const getMantenimientoCorrectivo = require('../controller/user/getMantenimientoCorrectivo')
 const filterProductController = require('../controller/product/filterProduct')
+const deleteProductController = require('../controller/product/deleteProduct')
 
 //demo
 router.get("/demo", demoController)
@@ -121,6 +122,7 @@ router.post("/category-product", getCategoryWiseProduct)
 router.post("/product-details", getProductDetails)
 router.get("/search", searchProduct)
 router.post("/filter-product",filterProductController)
+router.delete("/delete-product", authToken, deleteProductController);
 
 
 //user add to cart
