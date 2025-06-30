@@ -11,5 +11,4 @@ const uploadProductPermission = async(userId) => {
     return true
 }
 
-
 module.exports = uploadProductPermission
