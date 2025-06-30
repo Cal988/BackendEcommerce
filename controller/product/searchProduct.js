@@ -1,5 +1,4 @@
 const productModel = require("../../models/productModel")
-
 const searchProduct = async(req,res)=>{
     try{
         const query = req.query.q
