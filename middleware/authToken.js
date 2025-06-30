@@ -31,5 +31,4 @@ async function authToken(req, res, next){
         })
     }
 }
-
 module.exports = authToken
