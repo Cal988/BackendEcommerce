@@ -17,5 +17,4 @@ const getProductController = async(req, res)=>{
             })
         }
 }
-
 module.exports = getProductController
